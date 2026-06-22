@@ -1,0 +1,28 @@
+# Python dependencies for the Haru 2.0 Telepresence System.
+#
+# Install with:  pip install -r requirements.txt
+#
+# For a reproducible build, replace each line below with the exact version in
+# your environment, e.g. "torch==2.3.1" (check one with: pip show <package>).
+#
+# NOTE: ROS 2 packages are NOT installed via pip. The code also imports
+#   rclpy, std_msgs, cv_bridge, and the project's custom haru2_core_msgs.
+#   Install ROS 2 separately and source your workspace before running.
+
+# --- Core runtime (head/eye tracking, expression GCN, VOR PG-LSTM) ---
+numpy
+opencv-python
+mediapipe
+torch
+
+# --- Training & validation (train_haru_inverse.py, vor_pinn_train.py) ---
+matplotlib
+scikit-learn
+
+# --- Teleconference (screen-capture) mode ---
+mss
+pyautogui
+
+# --- Speech recognition (audio_manager.py, speech_recognizer.py) ---
+openai-whisper
+pyaudio
