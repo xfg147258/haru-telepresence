@@ -42,17 +42,13 @@ Requirements:
 
 - **ROS 2** with the `haru2_core_msgs` package available on your workspace
   (the node publishes motor / eye / LED commands through it).
-- **Python 3.10+** (the code uses the `X | None` type-union syntax).
-- Python dependencies: `pip install -r requirements.txt`
+- **Python 3.10+** .
+- Python dependencies: 
   (core: `torch`, `mediapipe`, `opencv-python`, `numpy`; training/validation:
   `matplotlib`, `scikit-learn`; teleconference capture: `mss`, `pyautogui`;
   speech: your chosen recognizer backend).
 
-```bash
-git clone https://github.com/<your-username>/<repo-name>.git
-cd <repo-name>
-pip install -r requirements.txt
-```
+
 
 ## Project Structure
 
@@ -123,19 +119,7 @@ python main.py
 
 Same pipeline, but driven by the local webcam instead of a screen region.
 
-### Training
 
-The runtime expects two trained checkpoints under `models/`. Both can be
-regenerated from this repository:
-
-```bash
-# 1. Collect paired (face-landmark, routine) data, then train the expression GCN
-python collect_data.py
-python train_haru_inverse.py            # writes models/expression_mapping.pth
-
-# 2. Train the VOR PG-LSTM on the ODE simulator (no real data needed)
-python vor_pinn_train.py --mode train   # writes the VOR checkpoint
-```
 
 ## Authors
 
