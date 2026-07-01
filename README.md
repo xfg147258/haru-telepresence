@@ -123,7 +123,7 @@ Same pipeline, but driven by the local webcam instead of a screen region.
 
 ## Authors
 
-- Fanggeng Xiong — Ocean University of China — 17685745810@163.com
+- Fanggeng Xiong — Ocean University of China — xfg147258@gmail.com
 
 ## Citation
 
