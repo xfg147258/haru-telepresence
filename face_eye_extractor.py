@@ -288,21 +288,8 @@ class FaceExtractor:
         self.last_frame_time = current_time
         return data
 
-    def _populate_eye_corners(self, data: dict, face_points: np.ndarray) -> None:
-        for key, idx in self.eye_corners.items():
-            data[key] = face_points[idx]
-        data['left_eye_center'] = (data['left_eye_left'] + data['left_eye_right']) / 2
-        data['right_eye_center'] = (data['right_eye_left'] + data['right_eye_right']) / 2
-        data['left_eye_width'] = float(np.linalg.norm(
-            data['left_eye_right'][:2] - data['left_eye_left'][:2]))
-        data['right_eye_width'] = float(np.linalg.norm(
-            data['right_eye_right'][:2] - data['right_eye_left'][:2]))
-        data['left_eye_height'] = float(np.linalg.norm(
-            face_points[self.eye_lids['left_eye_top']][:2]
-            - face_points[self.eye_lids['left_eye_bottom']][:2]))
-        data['right_eye_height'] = float(np.linalg.norm(
-            face_points[self.eye_lids['right_eye_top']][:2]
-            - face_points[self.eye_lids['right_eye_bottom']][:2]))
+not a git repository (or any of the parent directories): .git
+
 
     def _populate_iris_centers(self, data: dict, face_points: np.ndarray) -> None:
         data['left_iris_center'] = face_points[self.iris_landmarks['left_iris_center']]
